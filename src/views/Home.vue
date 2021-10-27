@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="Home">
+    <p>{{ states }}</p>
     <div id="dataMap"></div>
   </div>
 </template>
@@ -7,7 +8,18 @@
 //
 <script>
 import Datamap from "datamaps";
+import axios from "axios";
 export default {
+  data() {
+    return {
+      states: [],
+    };
+  },
+  created() {
+    axios.get("/states").then((response) => {
+      console.log("states", response.data);
+    });
+  },
   mounted() {
     new Datamap({
       scope: "usa",
@@ -15,7 +27,7 @@ export default {
       geographyConfig: {
         highlightBorderColor: "#bada55",
         popupTemplate: function (geography, data) {
-          return '<div class="hoverinfo">' + geography.properties.name + "Electoral Votes:" + data.electoralVotes + " ";
+          return '<div class="hoverinfo">' + geography.properties.name + " " + "Test:" + data.test + " ";
         },
         highlightBorderWidth: 3,
       },
@@ -32,203 +44,203 @@ export default {
       data: {
         AZ: {
           fillKey: "Republican",
-          electoralVotes: 5,
+          test: 5,
         },
         CO: {
           fillKey: "Light Democrat",
-          electoralVotes: 5,
+          test: 5,
         },
         DE: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         FL: {
           fillKey: "UNDECIDED",
-          electoralVotes: 29,
+          test: 29,
         },
         GA: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         HI: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         ID: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         IL: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         IN: {
           fillKey: "Republican",
-          electoralVotes: 11,
+          test: 11,
         },
         IA: {
           fillKey: "Light Democrat",
-          electoralVotes: 11,
+          test: 11,
         },
         KS: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         KY: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         LA: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         MD: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         ME: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         MA: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         MN: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         MI: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         MS: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         MO: {
           fillKey: "Republican",
-          electoralVotes: 13,
+          test: 13,
         },
         MT: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         NC: {
           fillKey: "Light Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         NE: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         NV: {
           fillKey: "Heavy Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         NH: {
           fillKey: "Light Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         NJ: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         NY: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         ND: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         NM: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         OH: {
           fillKey: "UNDECIDED",
-          electoralVotes: 32,
+          test: 32,
         },
         OK: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         OR: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         PA: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         RI: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         SC: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         SD: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         TN: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         TX: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         UT: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         WI: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         VA: {
           fillKey: "Light Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         VT: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         WA: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         WV: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         WY: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         CA: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         CT: {
           fillKey: "Democrat",
-          electoralVotes: 32,
+          test: 32,
         },
         AK: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         AR: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
         AL: {
           fillKey: "Republican",
-          electoralVotes: 32,
+          test: 32,
         },
       },
     });
